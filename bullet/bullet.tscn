@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b1ql87y4xuw6f"]
+
+[ext_resource type="Script" uid="uid://d2tolf2fglhcl" path="res://bullet/bullet.gd" id="1_k2aps"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6wip1"]
+radius = 4.0
+
+[sub_resource type="Gradient" id="Gradient_0qjqd"]
+colors = PackedColorArray(0.949246, 0.7462196, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xvnxm"]
+gradient = SubResource("Gradient_0qjqd")
+width = 1
+height = 1
+
+[node name="Bullet" type="Area2D" unique_id=1397070141]
+collision_layer = 3
+collision_mask = 5
+script = ExtResource("1_k2aps")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1529794677]
+shape = SubResource("CircleShape2D_6wip1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=257467389]
+scale = Vector2(6, 6)
+texture = SubResource("GradientTexture2D_xvnxm")
+
+[node name="Lifetime (Timer)" type="Timer" parent="." unique_id=858498023]
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Lifetime (Timer)" to="." method="_on_lifetime_timeout"]
