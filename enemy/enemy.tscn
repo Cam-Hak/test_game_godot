@@ -1,18 +1,10 @@
 [gd_scene format=3 uid="uid://r7bwl4xlp7vi"]
 
 [ext_resource type="Script" uid="uid://b365l03knl0bj" path="res://enemy/enemy.gd" id="1_2mvqj"]
+[ext_resource type="Texture2D" uid="uid://rnledyd5nh3u" path="res://enemy/alient.png" id="2_ofsxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(5, 5)
-
-[sub_resource type="Gradient" id="Gradient_qi2p4"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.5494355, 0, 0.096337385, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_iifgy"]
-gradient = SubResource("Gradient_qi2p4")
-width = 5
-height = 5
 
 [node name="enemy" type="CharacterBody2D" unique_id=1206639093 groups=["enemies"]]
 collision_layer = 5
@@ -23,5 +15,5 @@ scale = Vector2(14, 14)
 shape = SubResource("RectangleShape2D_4gyqm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=759097990]
-scale = Vector2(16, 16)
-texture = SubResource("GradientTexture2D_iifgy")
+scale = Vector2(2, 2)
+texture = ExtResource("2_ofsxj")

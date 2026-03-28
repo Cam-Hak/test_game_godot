@@ -22,8 +22,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		_process_movement()
 		_check_dash()
-	
+
 	_check_shoot()
+	rotation = (get_global_mouse_position() - global_position).angle() + PI/2
 	move_and_slide()
 
 

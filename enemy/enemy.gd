@@ -15,6 +15,7 @@ func _physics_process(_delta: float) -> void:
 	if player:
 		var direction = (player.global_position - global_position).normalized()
 		velocity = direction * speed
+		rotation = direction.angle() - PI/2
 		move_and_slide()
 
 

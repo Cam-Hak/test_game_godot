@@ -1,16 +1,10 @@
 [gd_scene format=3 uid="uid://diygwv781k3tm"]
 
 [ext_resource type="Script" uid="uid://bvcjdokm062ij" path="res://player/player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://c4j1yvxggikxt" path="res://player/test_player.png" id="2_rkbax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(12, 12)
-
-[sub_resource type="Gradient" id="Gradient_i3pqv"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_hqtel"]
-gradient = SubResource("Gradient_i3pqv")
-width = 12
-height = 12
 
 [node name="Player" type="CharacterBody2D" unique_id=737012828 groups=["player"]]
 script = ExtResource("1_4flbx")
@@ -19,7 +13,7 @@ script = ExtResource("1_4flbx")
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1078253532]
-texture = SubResource("GradientTexture2D_hqtel")
+texture = ExtResource("2_rkbax")
 
 [node name="ShootCooldown" type="Timer" parent="." unique_id=620959531]
 wait_time = 0.001
